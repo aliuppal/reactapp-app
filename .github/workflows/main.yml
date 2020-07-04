@@ -30,12 +30,12 @@ jobs:
       with: 
         cmd: install
         
-    - name: Installing surge
-      run: npm install -g surge     
-    
     - name: Creating build
       run: yarn build
     
+    - name: Installing surge
+      run: npm install -g surge     
+      
     - name: Deploying on surge
       run: surge ./build http://reactuppal.surge.sh/ --token ${{secrets.SURGE_TOKEN}}     
  
